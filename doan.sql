@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1:1521
--- Thời gian đã tạo: Th10 01, 2021 lúc 05:39 AM
--- Phiên bản máy phục vụ: 10.4.21-MariaDB
--- Phiên bản PHP: 8.0.10
+-- Host: 127.0.0.1:1521
+-- Generation Time: Nov 09, 2021 at 02:57 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `doan`
+-- Database: `doan`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `book`
+-- Table structure for table `book`
 --
 
 CREATE TABLE `book` (
@@ -38,19 +38,10 @@ CREATE TABLE `book` (
   `checked` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Đang đổ dữ liệu cho bảng `book`
---
-
-INSERT INTO `book` (`id`, `bookDay`, `bookTime`, `sl`, `hoten`, `email`, `notes`, `checked`) VALUES
-(1, '20.19.2020', '09.10', 1, 'Nguyen Van A', 'A@gmail.com', 'nothing to note', 0),
-(2, '20.05.2020', '09.10', 1, 'Nguyen Van B', 'B@gmail.com', NULL, 1),
-(9, '16.05.2021', '09:11', 1, 'Ndkscsa', 'casdf@gmail', 'cdsfa', 1);
-
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `failed_jobs`
+-- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -66,7 +57,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `food`
+-- Table structure for table `food`
 --
 
 CREATE TABLE `food` (
@@ -78,21 +69,21 @@ CREATE TABLE `food` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `food`
+-- Dumping data for table `food`
 --
 
 INSERT INTO `food` (`id`, `name`, `imgName`, `price`, `description`) VALUES
-(1, 'Caramelized Banana Pudding', 'product1', 9.95, 'This dressed-up banana pudding features bananas caramelized in brown sugar, butter, and cinnamon'),
-(2, 'Caramelized Banana Pudding', 'product2', 9.95, 'This dressed-up banana pudding features bananas caramelized in brown sugar, butter, and cinnamon.'),
-(3, 'Fresh Apple Cake', 'product3', 5.95, 'Thinly sliced apples create rich, moist layers of fruit within the cake. Top with your choice of Browned Butter Frosting, Cream Cheese Frosting, or Dark Chocolate Frosting.'),
-(4, 'Free-Form Strawberry Cheesecake', 'product4', 9.95, 'This quick-to-put together recipe is just as delicious as it looks. Ready-to-eat cheesecake filling saves loads of time, helping you get this dessert on the table in 20 minutes!'),
-(5, 'Caramelized Banana Pudding', 'product5', 9.95, 'This dressed-up banana pudding features bananas caramelized in brown sugar, butter, and cinnamon.'),
-(6, 'Caramelized Banana Pudding', 'product6', 9.95, 'This dressed-up banana pudding features bananas caramelized in brown sugar, butter, and cinnamon.');
+(1, 'Sunday roast', 'product1', 15.95, 'Được xem là món ăn truyền thống trứ danh bậc nhất của xứ sở sương mù, với nguyên liệu chính là thịt nướng lò ăn kèm với nước xốt và các loại rau củ. Có giá trị dinh dưỡng cao, rất tốt cho sức khỏe người dùng.'),
+(2, 'Bruschetta', 'product2', 9.95, 'Là món ăn nhẹ, món khai vị nổi tiếng ở nước Ý, Bruschetta bao gồm bánh mì nướng, được biến tấu ăn kèm với nhiều loại thực phẩm khác nhau. Trong số đó, cà chua được sử dụng nhiều và phổ biến nhất.'),
+(3, 'Mì Spaghetti', 'product3', 11.75, 'Pasta hay còn gọi là mì ống là món ăn nổi tiếng ở Italia (Ý). Mì sau khi luộc có thể trộn ăn cùng với sốt thịt bò cà chua, có vị béo chua hấp dẫn, gồm hai thành phần chính là sợi mì và nước sốt.'),
+(4, 'Goulash', 'product4', 13.35, 'Được xem như món ăn đặc trưng, biểu tượng của đất nước Hungary, Goulash nhận được nhiều sự ưa chuộng của thực khách và khá phổ biến ở Châu Âu. Đây là hỗn hợp của thịt hầm với rau củ, được tẩm ướp gia vị.'),
+(5, 'Wiener Schnitzel', 'product5', 17.05, 'Không những là một trong những món ăn nổi tiếng ở Châu Âu, mà Wiener Schnitzel còn là một đặc sản của nước Áo. Nguyên liệu chính được dùng ở đây là thịt bò, cừu, dê,… tùy theo sở thích mỗi người.'),
+(6, 'Ức vịt sốt cam', 'product6', 16.85, 'Được xem như một trong những món ngon truyền thống lâu đời ở Pháp, cũng như là món ăn Châu Âu nổi tiếng bao đời nay, ức vịt sốt cam được nhiều người ưa chuộng, nhất là vào những dịp cuối năm');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `message`
+-- Table structure for table `message`
 --
 
 CREATE TABLE `message` (
@@ -103,17 +94,10 @@ CREATE TABLE `message` (
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Đang đổ dữ liệu cho bảng `message`
---
-
-INSERT INTO `message` (`hoten`, `email`, `subject`, `content`, `id`) VALUES
-('Local Diaram', 'LocalDiaram@gmail.com', 'Book Table', 'How can I access with the staff before I come to the restaurant, I want to specify some staff to serve me', 6);
-
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -123,7 +107,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -135,7 +119,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `nhanvien`
+-- Table structure for table `nhanvien`
 --
 
 CREATE TABLE `nhanvien` (
@@ -148,21 +132,21 @@ CREATE TABLE `nhanvien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `nhanvien`
+-- Dumping data for table `nhanvien`
 --
 
 INSERT INTO `nhanvien` (`id`, `name`, `position`, `address`, `phone`, `salary`) VALUES
-(1, 'Dakota Rice', 'Manager', 'LA', '0926057194', 100.55),
-(2, 'Minerva Hooper', 'Chef', 'Washington', '0926057194', 23.789),
-(3, 'Sage Rodriguez', 'Chef', 'Baileux', '0926057194', 56.142),
-(4, 'Philip Chaney', 'Chef', 'Overland Park', '0926057194', 38.735),
-(5, 'Doris Greene', 'Staff', 'Feldkirchen in Kärnten', '0926057194', 63.543),
-(6, 'Mason Porter', 'Staff', 'Gloucester', '0926057194', 78.615);
+(1, 'Nhân Viên A', 'Quản lí', 'TP HCM', '0765976248', 100.05),
+(2, 'Nhân Viên B', 'Đầu bếp', 'Cần Thơ', '0316492873', 23.789),
+(3, 'Nhân Viên C', 'Bếp trưởng', 'Hà Nội', '0926057194', 56.142),
+(4, 'Nhân Viên D', 'Đầu bếp', 'Hà Nội', '0352684935', 38.735),
+(5, 'Nhân Viên E', 'Phục vụ', 'Huế', '0928496325', 33.543),
+(6, 'Nhân Viên F', 'Phục vụ', 'Đà Nẵng', '0795361486', 38.615);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -174,7 +158,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `personal_access_tokens`
+-- Table structure for table `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -192,7 +176,7 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -205,61 +189,61 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (2, 'nhanvien1', '$2y$10$4Gwd28MUVcZ2VEW98YRMMerlTLJzeEU5L4DrelajMpaqDep2Ho3jG', NULL, '2021-10-17 21:37:15', '2021-10-17 21:37:15');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `book`
+-- Indexes for table `book`
 --
 ALTER TABLE `book`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `failed_jobs`
+-- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Chỉ mục cho bảng `food`
+-- Indexes for table `food`
 --
 ALTER TABLE `food`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `message`
+-- Indexes for table `message`
 --
 ALTER TABLE `message`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `nhanvien`
+-- Indexes for table `nhanvien`
 --
 ALTER TABLE `nhanvien`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Chỉ mục cho bảng `personal_access_tokens`
+-- Indexes for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -267,60 +251,60 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_username_unique` (`username`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `book`
+-- AUTO_INCREMENT for table `book`
 --
 ALTER TABLE `book`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT cho bảng `failed_jobs`
+-- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `food`
+-- AUTO_INCREMENT for table `food`
 --
 ALTER TABLE `food`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT cho bảng `message`
+-- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT cho bảng `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `nhanvien`
+-- AUTO_INCREMENT for table `nhanvien`
 --
 ALTER TABLE `nhanvien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT cho bảng `personal_access_tokens`
+-- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
