@@ -38,10 +38,10 @@
 </head>
 <body>
     <div id="app">
-        <header class="">
+        <header>
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
-                    <a class="navbar-brand" href="index.html"><h2>Steireck <em>Restaurant</em></h2></a>
+                    <a class="navbar-brand" href="/"><h2>Steireck <em>Restaurant</em></h2></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="sr-only">Toggle Navigation</span>
                         <span class="navbar-toggler-icon icon-bar"></span>
