@@ -28,7 +28,9 @@
                   <th>Địa chỉ</th>
                   <th>Số điện thoại</th>
                   <th>Lương</th>
+                  @can('admin')
                   <th>Chỉnh sửa</th>
+                  @endcan
                 </thead>
                 <tbody>
                   <?php foreach($nhanVien as $nv): ?>
@@ -53,6 +55,7 @@
                             <span class="editSpan salarySpan">$<?=$nv->salary?></span>
                             <input class="editInput form-control salaryInput" type="number" name="salary" value="<?=$nv->salary?>" style="display: none;">
                           </td>
+                          @can('admin')
                           <td>
                             <button type="button" class="btn btn-sm btn-primary editBtn" onclick="edit_button($(this))" style="float: none;"><span class="material-icons">edit</span></button>
                             <button type="button" class="btn btn-sm btn-default deleteBtn" onclick="delete_button($(this))" style="float: none;"><span class="material-icons">delete</span></button>
@@ -60,11 +63,14 @@
                             <button type="button" class="btn btn-sm btn-warning confirmStaffBtn" onclick="confirm_button($(this))" style="float: none; display: none;"><span class="material-icons">check</span></button>
                             <button type="button" class="btn btn-sm btn-danger cancelBtn" onclick="cancel_button($(this))" style="float: none; display: none;"><span class="material-icons">cancel</span></button>
                           </td>
+                          @endcan
                       </tr>
                   <?php endforeach ?>
+                  @can('admin')
                   <tr class="trAdd">
                     <td colspan="6"><button type="button" class="btn btn-sm btn-primary addNVBtn" style="float: none;"><span class="material-icons">add</span></button></td>
                   </tr>
+                  @endcan
                 </tbody>
               </table>
             </div>

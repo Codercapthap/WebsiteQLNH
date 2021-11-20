@@ -105,7 +105,7 @@
                 <div class="row">
                 <div class="col-md-12">
                     <div class="inner-content">
-                    <p>© 2021Copyright Steireck - Steireck Restaurant</p>
+                    <p>Steireck Restaurant</p>
                     </div>
                 </div>
                 </div>

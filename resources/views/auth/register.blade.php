@@ -71,6 +71,10 @@
                     </form>
                 </div>
             </div>
+            <form method="POST" action="/createadmin">
+                @csrf
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </div>
 </div>

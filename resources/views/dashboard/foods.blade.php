@@ -27,7 +27,9 @@
                   <th>Hình ảnh</th>
                   <th>Giá</th>
                   <th>Mô tả</th>
+                  @can('admin')
                   <th>Chỉnh sửa</th>
+                  @endcan
                 </thead>
                 <tbody>
                   <?php foreach($foods as $food): ?>
@@ -48,18 +50,22 @@
                             <span class="editSpan desSpan"><?=$food->description?></span>
                             <textarea class="editInput form-control descriptionInput" type="text" name="description" style="display: none;"><?=$food->description?></textarea>
                           </td>
+                          @can('admin')
                           <td>
                             <button type="button" class="btn btn-sm btn-primary editBtn" onclick="edit_button($(this))" style="float: none;"><span class="material-icons">edit</span></button>
                             <button type="button" class="btn btn-sm btn-default deleteBtn" onclick="delete_button($(this))" style="float: none;"><span class="material-icons">delete</span></button>
                             <button type="button" class="btn btn-sm btn-success saveFoodBtn" onclick="saveFood_button($(this))" style="float: none; display: none;"><span class="material-icons">save</span></button>
                             <button type="button" class="btn btn-sm btn-warning confirmFoodBtn" onclick="confirm_button($(this))" style="float: none; display: none;"><span class="material-icons">check</span></button>
                             <button type="button" class="btn btn-sm btn-danger cancelBtn" onclick="cancel_button($(this))" style="float: none; display: none;"><span class="material-icons">cancel</span></button>
-                          </td>
+                          </td>  
+                          @endcan('admin')
                       </tr>
                   <?php endforeach ?>
+                  @can('admin')
                   <tr class="trAdd">
                     <td colspan="5"><button type="button" class="btn btn-sm btn-primary addFoodBtn" style="float: none;"><span class="material-icons">add</span></button></td>
                   </tr>
+                  @endcan
                 </tbody>
               </table>
             </div>

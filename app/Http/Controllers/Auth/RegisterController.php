@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Models\NhanVien;
 
 class RegisterController extends Controller
 {
@@ -22,6 +23,20 @@ class RegisterController extends Controller
     |
     */
 
+    function stripUnicode($str){
+        if(!$str) return false;
+        $unicode = array(
+        'a'=>'á|à|ả|ã|ạ|ă|ắ|ặ|ằ|ẳ|ẵ|â|ấ|ầ|ẩ|ẫ|ậ',
+        'd'=>'đ',
+        'e'=>'é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ',
+        'i'=>'í|ì|ỉ|ĩ|ị',
+        'o'=>'ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ',
+        'u'=>'ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự',
+        'y'=>'ý|ỳ|ỷ|ỹ|ỵ',
+        );
+        foreach($unicode as $nonUnicode=>$uni) $str = preg_replace("/($uni)/i",$nonUnicode,$str);
+        return $str;
+    }
     use RegistersUsers;
 
     /**
@@ -69,5 +84,29 @@ class RegisterController extends Controller
             // 'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+    public function createadmin(){
+        $staffs = NhanVien::all();
+        foreach($staffs as $staff){
+            $username = $this->stripUnicode($staff['name']);
+            $username = strtolower($username);
+            $username = str_replace(' ', '', $username);
+            if(strcasecmp($staff['position'], 'Admin') == 0){
+                User::create([
+                    'username' => $username . $staff['id'],
+                    'type' => 'admin',
+                    'password' => Hash::make('quantri' . $staff['id']),
+                    'idStaff' => $staff['id']
+                ]);
+            }
+            else{
+                User::create([
+                    'username' => $username . $staff['id'],
+                    'type' => 'nhanvien',
+                    'password' => Hash::make('nhanvien' . $staff['id']),
+                    'idStaff' => $staff['id']
+                ]);
+            }
+        }
     }
 }

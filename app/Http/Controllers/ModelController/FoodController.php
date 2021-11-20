@@ -83,7 +83,7 @@ class FoodController extends Controller
         else{
             return [
                 'status' => 'error',
-                'msg' => "Hãy gửi hình ảnh vào"
+                'msg' => "Hãy gửi hình ảnh lên"
             ];
         }
         if(isset($errors['name'])){

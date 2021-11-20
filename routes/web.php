@@ -42,3 +42,5 @@ Route::post('/messages/add', [\App\Http\Controllers\ModelController\MessageContr
 Route::post('/books/add', [\App\Http\Controllers\ModelController\BookController::class, 'add']);
 Route::post('/books/delete', [\App\Http\Controllers\ModelController\BookController::class, 'delete']);
 Route::post('/books/check', [\App\Http\Controllers\ModelController\BookController::class, 'check']);
+
+Route::post('/createadmin', [\App\Http\Controllers\Auth\RegisterController::class, 'createadmin']);
