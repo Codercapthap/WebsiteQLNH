@@ -79,6 +79,12 @@ class FoodController extends Controller
                     ];
                 }
             }
+            else{
+                return [
+                    'status' => 'error',
+                    'msg' => "Ảnh phải thuộc định dạng jpg, jpeg hoặc png"
+                ];
+            }
         }
         else{
             return [
